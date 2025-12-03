@@ -1,4 +1,5 @@
 import Message from "./Message";
+import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 function App() {
   const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -7,7 +8,7 @@ function App() {
   }
   return (
     <div>
-      <ListGroup items={items} header="Cities" onSelectItem={handleSelectItem}/>
+      <Button onClick={() => console.log("Button clicked")}>Click Me</Button>
     </div>
   );
 }
