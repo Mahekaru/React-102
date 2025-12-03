@@ -1,13 +1,11 @@
-import Message from "./Message";
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 function App() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  }
   return (
     <div>
-      <ListGroup items={items} header="Cities" onSelectItem={handleSelectItem}/>
+      <Alert>
+        This is an alert message !
+        <span>This is too</span>
+        </Alert>
     </div>
   );
 }
