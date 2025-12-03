@@ -1,13 +1,13 @@
+import { useState } from "react";
 import Message from "./Message";
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 function App() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  }
+  const [alertVisible, setAlertVisible] = useState(false);
   return (
     <div>
-      <ListGroup items={items} header="Cities" onSelectItem={handleSelectItem}/>
+      {alertVisible && <Alert onClose={() => setAlertVisible(false)}>This is an alert message!</Alert>}
+      <button className="btn btn-primary m-2" onClick={() => setAlertVisible(true)}>Show Alert</button>
     </div>
   );
 }
