@@ -1,9 +1,21 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useRef } from "react";
 
 const Form = () => {
+    // UseRef hooks for uncontrolled components.
+    // Gets the data from our input fields.
+    const nameRef = useRef<HTMLInputElement>(null);
+    const ageRef = useRef<HTMLInputElement>(null);
+    const person = {name: '', age: 0};
+
   const handleSumit = (event: FormEvent) => {
     event.preventDefault();
-    console.log("Submitted");
+    if(nameRef.current !== null)
+        // console.log(nameRef.current.value);
+        person.name = nameRef.current.value;
+    if(ageRef.current !== null)
+        person.age = Number(ageRef.current.value);
+
+    console.log(person);
   };
 
   return (
@@ -14,13 +26,13 @@ const Form = () => {
         <label htmlFor="name" className="form-label">
           Name
         </label>
-        <input id="name" type="text" className="form-control" />
+        <input ref={nameRef} id="name" type="text" className="form-control" />
       </div>
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
           Age
         </label>
-        <input id="age" type="number" className="form-control" />
+        <input ref={ageRef} id="age" type="number" className="form-control" />
       </div>
       <button className="btn btn-primary">Submit</button>
     </form>
