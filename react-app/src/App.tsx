@@ -7,6 +7,7 @@ import produce from 'immer';
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 
+// Add toppings to pizza
 function App() {
   const [pizza, setPizza] = useState({
     name: 'Spicy Pepperoni',
