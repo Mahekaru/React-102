@@ -18,16 +18,7 @@ function App() {
   });
 
   const handleClick = () => {
-    setCart({
-      ...cart,
-      items: [...cart.items.slice(0, 1), { ...cart.items[1], quantity: 5 }],
-    });
-    setCart({
-      ...cart,
-      items: cart.items.map((items) =>
-        items.id === 2 ? { ...items, quantity: 5 } : items
-      ),
-    });
+
   };
 
   return <button onClick={handleClick}>Click</button>;
