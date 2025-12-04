@@ -8,11 +8,9 @@ import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 
 function App() {
-  const [game, setGame] = useState({
-    id:1,
-    player:{
-      name:"John",
-    }
+  const [pizza, setPizza] = useState({
+    name: 'Spicy Pepperoni',
+    toppings: ['Mushroom']
   });
 
   const handleClick = () => {
