@@ -18,12 +18,7 @@ function App() {
   }
 
   return (
-    <div>
-      <button onClick={() => {
-        handleClick
-        console.log(game);
-      }}>Change Name</button>
-    </div>
+    <button onClick={handleClick}>Click</button>
   );
 };
 
