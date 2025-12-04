@@ -8,13 +8,23 @@ import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 
 function App() {
-const [cartItems, setCartItems] = useState(['Product 1', 'Product 2']);
+  const [game, setGame] = useState({
+    id:1,
+    player:{
+      name:"John",
+    }
+  });
 
+  const handleClick = () => {
+
+  }
 
   return (
     <div>
-      <Navbar cartItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      <button onClick={() => {
+        handleClick
+        console.log(game);
+      }}>Change Name</button>
     </div>
   );
 };
