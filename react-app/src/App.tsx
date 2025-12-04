@@ -6,18 +6,19 @@ import Form from "./Form";
 function App() {
   // Grouping related state together
   // Avoid deeply nested states
-  const [customer, setCustomer] = useState({
-    name: 'John',
-    address:{
-      city: 'San Francisco',
-      zipCode: 94111,
-    },
-  });
+const [tags, setTags] = useState(['happy','cheerful']);
+
 
   const handleClick = () => {
-    setCustomer({...customer,
-      address: {...customer.address, zipCode: 12345},
-    });
+    // add a new item to the array
+    setTags([...tags, 'exciting']);
+
+    // Remove 
+    setTags(tags.filter(tag => tag !== 'happy'));
+
+    // update
+    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag));
+  
   };
 
   return (
