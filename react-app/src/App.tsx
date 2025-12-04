@@ -6,19 +6,13 @@ import Form from "./Form";
 function App() {
   // Grouping related state together
   // Avoid deeply nested states
-const [tags, setTags] = useState(['happy','cheerful']);
-
+const [bugs, setBugs] = useState([
+  {id:1,title:'Bug 1', fixed: false},
+  {id:2,title:'Bug 2', fixed: false},
+]);
 
   const handleClick = () => {
-    // add a new item to the array
-    setTags([...tags, 'exciting']);
-
-    // Remove 
-    setTags(tags.filter(tag => tag !== 'happy'));
-
-    // update
-    setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag));
-  
+    setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true} : bug));
   };
 
   return (
