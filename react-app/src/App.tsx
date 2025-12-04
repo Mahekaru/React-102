@@ -6,30 +6,25 @@ import Form from "./Form";
 function App() {
   // Grouping related state together
   // Avoid deeply nested states
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  const[drink, setDrink] = useState({
-    title: "Americano",
-    price:5,
-  })
+  const [customer, setCustomer] = useState({
+    name: 'John',
+    address:{
+      city: 'San Francisco',
+      zipCode: 94111,
+    },
+  });
 
   const handleClick = () => {
-
-    setDrink({...drink, price: 6});
-    }
+    setCustomer({...customer,
+      address: {...customer.address, zipCode: 12345},
+    });
   };
-  // const [person, setPerson] =useState({
-  //   firstName: '',
-  //   lastName: ''
-  // });
-  // const fullName = person.firstName + ' ' + person.lastName;
 
   return (
     <div>
-      {/* {fullName} */}
       <button onClick={handleClick}>Click Me</button>
     </div>
   );
-}
+};
 
 export default App;
